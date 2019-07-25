@@ -19,15 +19,14 @@ let date1 = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
       '7th Street'
     ];
 class Driver {
-  constructor(name,date) {
-    this.name = name 
-    this.date = date
+  constructor( name, startDate ) {
+    this.name = name;
+    this.startDate = new Date( startDate );
   }
-  startDate() {
-    return `${this.date}`
-  }
-  yearsExperienceFromBeginingOf(){
-    return `${date1-this.date}`
+  yearsExperienceFromBeginningOf( year ) {
+    let endDate = new Date( year, 1, 1 );
+    let totalYears = ( endDate - this.startDate ) / ( 365 * 24 * 60 * 60 * 1000 );
+    return parseInt( totalYears );
   }
 }
 
