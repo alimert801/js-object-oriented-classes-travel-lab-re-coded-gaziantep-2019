@@ -29,18 +29,6 @@ class Driver {
     return parseInt( totalYears );
   }
 }
-
-class Route {
-  constructor(beginingLocationH,endingLocationH,beginingLocationV,endingLocationV) {
-    this.beginH = beginingLocationH
-    this.beginV = beginingLocationV
-    this.endV = endingLocationV
-    this.endH = endingLocationH
-  }
-  blocksTravelled() {
-    return `You should go ${eastWest[endH]-eastWest[beginH]} block Horizontal, You should go ${northSouth[endH]-northSouth[beginH]} block Vertical`
-  }
-}
 class Route {
   constructor( beginningLocation, endingLocation ) {
     this.beginningLocation = beginningLocation;
