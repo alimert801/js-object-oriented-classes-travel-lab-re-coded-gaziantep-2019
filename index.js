@@ -1,5 +1,6 @@
 let today = new Date();
 let date1 = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
     let eastWest = [
       '1st Avenue',
       '2nd Avenue',
@@ -18,17 +19,7 @@ let date1 = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
       '6th Street',
       '7th Street'
     ];
-class Driver {
-  constructor( name, startDate ) {
-    this.name = name;
-    this.startDate = new Date( startDate );
-  }
-  yearsExperienceFromBeginningOf( year ) {
-    let endDate = new Date( year, 1, 1 );
-    let totalYears = ( endDate - this.startDate ) / ( 365 * 24 * 60 * 60 * 1000 );
-    return parseInt( totalYears );
-  }
-}
+
 class Route {
   constructor( beginningLocation, endingLocation ) {
     this.beginningLocation = beginningLocation;
@@ -51,6 +42,19 @@ class Route {
     } else {
       return this.blocksTravelled() / 3;
     }
+  }
+}
+
+
+class Driver {
+  constructor( name, startDate ) {
+    this.name = name;
+    this.startDate = new Date( startDate );
+  }
+  yearsExperienceFromBeginningOf( year ) {
+    let endDate = new Date( year, 1, 1 );
+    let totalYears = ( endDate - this.startDate ) / ( 365 * 24 * 60 * 60 * 1000 );
+    return parseInt( totalYears );
   }
 }
 
